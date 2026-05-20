@@ -44,6 +44,9 @@ app.post('/send-notification', async (req, res) => {
         messaging.send({
           token,
           notification: { title, body },
+          data: {
+            url: url || 'https://thebohothread.in/dashboard.html'
+          },
           webpush: {
             notification: {
               title, body,
